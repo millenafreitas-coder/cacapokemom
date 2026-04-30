@@ -13,19 +13,20 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.pokemon-container{
+  background: #8e691a;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  height: 300px;
+  width: 200px;
+border: 4px solid rgb(240, 237, 59);
+border-radius: 10px;
 }
 
 .App-link {
-  color: #61dafb;
+  color: #211521;
 }
 
 @keyframes App-logo-spin {
