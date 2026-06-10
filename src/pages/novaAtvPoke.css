@@ -1,0 +1,18 @@
+
+.container{
+  text-align: center;
+ background: url('../assets/fundo.jpeg');
+  background-size: cover;
+  height: 800px;
+}
+.container h3{
+ font-size:20
+}
+
+.container img{
+ height: 100px;
+}
+
+.vazio{
+  height: 200px;
+}
