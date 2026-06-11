@@ -6,7 +6,7 @@ import { useParams } from "react-router-dom"; /*traz a função de fora também 
 
 function Cacapokemom() {
   const { id } = useParams();
-  const {pokemons, loading, error} = useFetchPokeapi(id); 
+  const {myPokemon, loading, error} = useFetchPokeapi(id); 
 
   if (loading) return <div>
     className= "loader"> Carregando Pokédex
@@ -16,18 +16,18 @@ function Cacapokemom() {
   return (
     <div className="cacapokemom">
      <div className="pokemon-container">
-    <div className={`pokemon-card tipo-${pokemons.types[0].type.name}`}> {/* aqui */}
+    <div className={`pokemon-card tipo-${myPokemon.tipo}`}> {/* aqui */}
     <h1>Poke card</h1>
    
 
 
-<h3>{pokemons.name}</h3>
-<img src={pokemons.sprites.front_default} alt={pokemons.name}/>
-  <h3>{pokemons.stats[0].stat.name+
-  pokemons.stats[0].base_stat}</h3>
-  <h3>{pokemons.stats[1].stat.name+''+
-  pokemons.stats[1].base_stat}</h3>
-  <h3>{pokemons.types[0].type.name}</h3>
+<h3>{myPokemon.name}</h3>
+<img src={myPokemon.sprites.front_default} alt={myPokemon.name}/>
+  <h3>{myPokemon.nome+
+  myPokemon.vida}</h3>
+  <h3>{myPokemon.ataque+
+  myPokemon.stats[1].base_stat}</h3>
+  <h3>{myPokemon.tipo}</h3>
     </div>
     </div>
     </div>

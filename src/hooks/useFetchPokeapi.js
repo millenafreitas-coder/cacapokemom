@@ -6,18 +6,15 @@ function useFetchPokeapi(pokemon) {
   const [pokemons, setPokemons] = useState({});
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
-
+  const [specie, setSpecie] = useState({});
+  const [evolution, setEvolution] = useState({});
+  const [myPokemon, setMyPokemon] = useState({});
   useEffect(() => {
     const getData = async () => {
       try {
         const res = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`,
           {
-            headers: {
-              'Cache-Control': 'no-cache',
-              'Pragma': 'no-cache',
-              'Expires': '0',
-            }
+           
           });
 
         setPokemons(res.data);
@@ -32,7 +29,61 @@ function useFetchPokeapi(pokemon) {
     };
     getData();
   }, [pokemon]);
-  return { pokemons, loading, error }
+
+  useEffect(() => {
+    const getSpacies = async () => {
+      try {
+        const res = await axios.get(pokemons.species.url, {});
+        setSpecie(res.data);
+        console.log('Success:', res.data);
+        setLoading(false);
+      }catch (err){
+        console.error('Erro ao carregar API', err);
+        setLoading(false);
+        setError(true);
+      }
+      };
+      getSpacies();
+    }, [pokemons]);
+
+
+    useEffect(() => {
+      const getEvolutions = async () => {
+        try {
+          const res = await axios.get(specie.evolution_chain.url, {}); 
+
+          setEvolution(res.data);
+          console.log('Success:', res.data);
+          setLoading(false);
+        }catch (err){
+          console.error('Erro ao carregar API', err);
+          setLoading(false);
+          setError(true);
+        }
+        };
+        getEvolutions();
+      }, [specie]);
+
+
+      useEffect(() => {
+        const setPoke = async () => {
+        try {
+        setMyPokemon({
+          nome: pokemons.name,
+          vida: pokemons.stats[0].base_stat,
+          ataque: pokemons.stats[1].base_stat,
+          tipo: pokemons.types[0].type.name,
+          evolucao: [evolution.chain.species.name],
+          imagem: pokemons.sprites.front_default,
+      });
+     } catch (err) {
+        console.error(err);
+      }
+    };
+    setPoke();
+      }, [evolution, pokemons]);
+
+  return { myPokemon, loading, error }
 }
 
 export default useFetchPokeapi;
