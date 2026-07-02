@@ -30,12 +30,12 @@ return(
         </div>
         <div className="vazio"></div>
     </div>
-    <Link to="/cacapokemom/tepig" ClassName="pirulitos"> <img src={pirulito} /></Link>
-    <Link to="/cacapokemom/poliwag" ClassName="pirulitos"> <img src={pirulito} /></Link>
-    <Link to="/cacapokemom/jigglypuff" ClassName="pirulitos"> <img src={pirulito} /></Link>
-    <Link to="/" ClassName="pirulitos"> <img src={pirulito} /></Link>
-    <Link to="/" ClassName="pirulitos"> <img src={pirulito} /></Link>
-    <Link to="/" ClassName="pirulitos"> <img src={pirulito} /></Link>
+    <Link to="/cacapokemom/tepig" className="pirulitos"> <img src={pirulito} /></Link>
+    <Link to="/cacapokemom/poliwag" className="pirulitos"> <img src={pirulito} /></Link>
+    <Link to="/cacapokemom/jigglypuff" className="pirulitos"> <img src={pirulito} /></Link>
+    <Link to="/cacapokemom/rotom" className="pirulitos"> <img src={pirulito} /></Link>
+    <Link to="/" className="pirulitos"> <img src={pirulito} /></Link>
+    <Link to="/" className="pirulitos"> <img src={pirulito} /></Link>
         </div>
 
 );

@@ -52,4 +52,12 @@ border-radius: 10px;
   border: 6px solid  #fba7e6;
   color: #f664b9;
 
+
+}
+
+
+.pokemon-card{
+  background-image: url(../assets/fd.rotom.jpg);
+  border: 6px solid  #b2edff;
+  color: #ff8b5d;
 }

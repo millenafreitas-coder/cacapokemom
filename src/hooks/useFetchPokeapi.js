@@ -36,11 +36,10 @@ function useFetchPokeapi(pokemon) {
         const res = await axios.get(pokemons.species.url, {});
         setSpecie(res.data);
         console.log('Success:', res.data);
-        setLoading(false);
+
       }catch (err){
         console.error('Erro ao carregar API', err);
-        setLoading(false);
-        setError(true);
+      
       }
       };
       getSpacies();
@@ -54,11 +53,10 @@ function useFetchPokeapi(pokemon) {
 
           setEvolution(res.data);
           console.log('Success:', res.data);
-          setLoading(false);
+  
         }catch (err){
           console.error('Erro ao carregar API', err);
-          setLoading(false);
-          setError(true);
+     
         }
         };
         getEvolutions();

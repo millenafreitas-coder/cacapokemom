@@ -22,11 +22,10 @@ function Cacapokemom() {
 
 
 <h3>{myPokemon.name}</h3>
-<img src={myPokemon.sprites.front_default} alt={myPokemon.name}/>
+<img src={myPokemon.imagem} alt={myPokemon.name}/>
   <h3>{myPokemon.nome+
   myPokemon.vida}</h3>
-  <h3>{myPokemon.ataque+
-  myPokemon.stats[1].base_stat}</h3>
+  <h3>{myPokemon.ataque}</h3>
   <h3>{myPokemon.tipo}</h3>
     </div>
     </div>
